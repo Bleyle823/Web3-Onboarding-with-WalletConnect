@@ -107,7 +107,7 @@ const config: HardhatUserConfig = {
       accounts: [deployerPrivateKey],
     },
     baseSepolia: {
-      url: `https://base-sepolia.g.alchemy.com/v2/${providerApiKey}`,
+      url: "https://sepolia.base.org",
       accounts: [deployerPrivateKey],
       chainId: 84532,
     },
