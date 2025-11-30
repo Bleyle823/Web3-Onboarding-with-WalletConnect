@@ -107,8 +107,9 @@ const config: HardhatUserConfig = {
       accounts: [deployerPrivateKey],
     },
     baseSepolia: {
-      url: "https://sepolia.base.org",
+      url: `https://base-sepolia.g.alchemy.com/v2/${providerApiKey}`,
       accounts: [deployerPrivateKey],
+      chainId: 84532,
     },
     scrollSepolia: {
       url: "https://sepolia-rpc.scroll.io",
@@ -129,12 +130,40 @@ const config: HardhatUserConfig = {
   },
   // Configuration for harhdat-verify plugin
   etherscan: {
-    apiKey: `${etherscanApiKey}`,
+    apiKey: {
+      mainnet: `${etherscanApiKey}`,
+      sepolia: `${etherscanApiKey}`,
+      base: `${etherscanApiKey}`,
+      baseSepolia: `${etherscanApiKey}`,
+    },
+    customChains: [
+      {
+        network: "baseSepolia",
+        chainId: 84532,
+        urls: {
+          apiURL: "https://api-sepolia.basescan.org/api",
+          browserURL: "https://sepolia.basescan.org",
+        },
+      },
+      {
+        network: "base",
+        chainId: 8453,
+        urls: {
+          apiURL: "https://api.basescan.org/api",
+          browserURL: "https://basescan.org",
+        },
+      },
+    ],
   },
   // Configuration for etherscan-verify from hardhat-deploy plugin
   verify: {
     etherscan: {
-      apiKey: `${etherscanApiKey}`,
+      apiKey: {
+        mainnet: `${etherscanApiKey}`,
+        sepolia: `${etherscanApiKey}`,
+        base: `${etherscanApiKey}`,
+        baseSepolia: `${etherscanApiKey}`,
+      },
     },
   },
   sourcify: {
