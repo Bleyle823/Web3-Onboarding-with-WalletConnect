@@ -33,6 +33,17 @@ export const queryClient = new QueryClient({
   },
 });
 
+/**
+ * Main app provider component with Web3 wallet integration
+ * 
+ * This component sets up:
+ * - Wagmi for Ethereum interactions
+ * - RainbowKit (built on WalletConnect/Reown) for wallet connections
+ * - QueryClient for data fetching
+ * 
+ * WalletConnect/Reown enables connections to 700+ wallets via the WalletConnect Network
+ * Learn more: https://docs.reown.com/appkit/overview
+ */
 export const ScaffoldEthAppWithProviders = ({ children }: { children: React.ReactNode }) => {
   const { resolvedTheme } = useTheme();
   const isDarkMode = resolvedTheme === "dark";
