@@ -1,4 +1,4 @@
-# 🏗 Scaffold-ETH 2
+# 🏗 Scaffold-ETH 2 - On-Chain Poll
 
 <h4 align="center">
   <a href="https://docs.scaffoldeth.io">Documentation</a> |
@@ -6,6 +6,35 @@
 </h4>
 
 🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
+
+## 📋 Poll Contract Deployment
+
+### Deployment Details
+
+**Contract Name:** Poll  
+**Network:** Base Mainnet  
+**Contract Address:** `0x5C14c249DA94C7757F0B57b178CC887E9b1AA03B`  
+**Transaction Hash:** `0x6e2b26fb0ee49a5fbd95acc8a5455623e0d30c4410622f6cbcef0eb02df68ccd`  
+**Gas Used:** 806,080  
+**EVM Target:** paris  
+**Initial Poll Count:** 0
+
+**View on BaseScan:** [https://basescan.org/address/0x5C14c249DA94C7757F0B57b178CC887E9b1AA03B](https://basescan.org/address/0x5C14c249DA94C7757F0B57b178CC887E9b1AA03B)
+
+### Contract Features
+
+The Poll contract allows users to:
+- **Create Polls**: Create polls with questions, multiple options (2-10), and a duration
+- **Vote**: Cast votes on active polls (one vote per address per poll)
+- **View Results**: Get poll results including question, options, vote counts, and total votes
+- **Check Voting Status**: Check if an address has already voted on a specific poll
+
+### Contract Functions
+
+- `createPoll(string memory _question, string[] memory _options, uint256 _duration)` - Creates a new poll
+- `vote(uint256 _pollId, uint256 _optionIndex)` - Casts a vote on a poll
+- `getPollResults(uint256 _pollId)` - Returns poll results and statistics
+- `hasVoted(uint256 _pollId, address _voter)` - Checks if an address has voted
 
 ⚙️ Built using NextJS, RainbowKit, Foundry/Hardhat, Wagmi, Viem, and Typescript.
 
