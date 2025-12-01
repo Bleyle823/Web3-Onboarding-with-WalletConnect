@@ -73,7 +73,7 @@ contract WalletConnectNFT is ERC721URIStorage, ERC721Enumerable, Ownable, Reentr
     function mint(string memory _tokenURI) external payable nonReentrant returns (uint256) {
         require(mintingEnabled, "Minting is disabled");
         require(publicMintEnabled || whitelist[msg.sender], "Public mint not enabled");
-        require(_tokenIds.current() < maxSupply, "Max supply reached");
+        require(_tokenIds < maxSupply, "Max supply reached");
         require(msg.value >= mintPrice, "Insufficient payment");
         require(
             mintedPerWallet[msg.sender] < maxMintPerWallet,
@@ -99,7 +99,7 @@ contract WalletConnectNFT is ERC721URIStorage, ERC721Enumerable, Ownable, Reentr
         require(_tokenURIs.length > 0, "Must mint at least 1");
         require(_tokenURIs.length <= 20, "Maximum 20 per transaction");
         require(
-            _tokenIds.current() + _tokenURIs.length <= maxSupply,
+            _tokenIds + _tokenURIs.length <= maxSupply,
             "Would exceed max supply"
         );
         require(
