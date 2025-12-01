@@ -13,7 +13,32 @@
 - 🪝 **[Custom hooks](https://docs.scaffoldeth.io/hooks/)**: Collection of React hooks wrapper around [wagmi](https://wagmi.sh/) to simplify interactions with smart contracts with typescript autocompletion.
 - 🧱 [**Components**](https://docs.scaffoldeth.io/components/): Collection of common web3 components to quickly build your frontend.
 - 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
-- 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
+- 🔐 **WalletConnect/Reown Integration**: Connect to 700+ wallets via WalletConnect Network with seamless wallet connections.
+
+## 🔗 WalletConnect/Reown Integration
+
+This project is fully compatible with **WalletConnect** and **Reown** (formerly WalletConnect Inc.) for seamless wallet connections.
+
+### Wallet Support
+
+The app uses **RainbowKit** which is built on top of **WalletConnect/Reown**, enabling connections to:
+- **700+ wallets** via the WalletConnect Network
+- **65,000+ apps** across EVM, Solana, Bitcoin, and more
+- Direct connections to popular wallets: MetaMask, Coinbase Wallet, Ledger, Rainbow, Safe, and more
+
+### Configuration
+
+The project is pre-configured with WalletConnect/Reown for secure wallet connections:
+- **WalletConnect Project ID**: Uses default project ID - works out of the box, no setup required
+- **Network Support**: Hardhat (local development) and other EVM-compatible networks
+- **Ready to Use**: All default values are configured and ready for immediate use
+
+### Resources
+
+- [Reown AppKit Documentation](https://docs.reown.com/appkit/overview)
+- [WalletConnect App SDK Documentation](https://docs.walletconnect.network/app-sdk/overview)
+- [RainbowKit Documentation](https://www.rainbowkit.com/docs/introduction)
+- [Reown Cloud Dashboard](https://cloud.walletconnect.com)
 
 ![Debug Contracts tab](https://github.com/scaffold-eth/scaffold-eth-2/assets/55535804/b237af0c-5027-4849-a5c1-2e31495cccb1)
 

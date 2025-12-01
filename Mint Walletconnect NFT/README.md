@@ -53,7 +53,7 @@ Mint WalletConnect NFT is a full-stack Web3 application that enables users to mi
 
 ### Frontend Features
 
-- 🔗 **WalletConnect Integration**: Connect with 300+ wallets
+- 🔗 **WalletConnect/Reown Integration**: Connect with 700+ wallets via WalletConnect Network
 - 🎨 **Modern UI**: Beautiful, responsive interface
 - 📱 **Mobile Support**: Fully optimized for mobile devices
 - 🔍 **Block Explorer**: Built-in transaction and address explorer
@@ -407,6 +407,31 @@ Contributions are welcome! Please follow these steps:
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENCE](LICENCE) file for details.
+
+## 🔗 WalletConnect/Reown Integration
+
+This project is fully compatible with **WalletConnect** and **Reown** (formerly WalletConnect Inc.) for seamless wallet connections.
+
+### Wallet Support
+
+The app uses **RainbowKit** which is built on top of **WalletConnect/Reown**, enabling connections to:
+- **700+ wallets** via the WalletConnect Network
+- **65,000+ apps** across EVM, Solana, Bitcoin, and more
+- Direct connections to popular wallets: MetaMask, Coinbase Wallet, Ledger, Rainbow, Safe, and more
+
+### Configuration
+
+The project is pre-configured with WalletConnect/Reown for secure wallet connections:
+- **WalletConnect Project ID**: Uses default project ID - works out of the box, no setup required
+- **Network Support**: Base Mainnet and Hardhat (EVM-compatible)
+- **Ready to Use**: All default values are configured and ready for immediate use
+
+### Resources
+
+- [Reown AppKit Documentation](https://docs.reown.com/appkit/overview)
+- [WalletConnect App SDK Documentation](https://docs.walletconnect.network/app-sdk/overview)
+- [RainbowKit Documentation](https://www.rainbowkit.com/docs/introduction)
+- [Reown Cloud Dashboard](https://cloud.walletconnect.com)
 
 ## 🔗 Useful Links
 
