@@ -1,1 +1,1 @@
-Mint Walletconnect NFT : https://nextjs-iui8xw28o-bleyle125s-projects.vercel.app
+Mint Walletconnect NFT : https://nextjs-mua5rbtbt-bleyle125s-projects.vercel.app
