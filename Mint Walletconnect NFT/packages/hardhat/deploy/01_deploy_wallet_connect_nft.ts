@@ -23,7 +23,8 @@ const deployWalletConnectNFT: DeployFunction = async function (hre: HardhatRunti
     // Contract constructor arguments
     args: [name, symbol, baseTokenURI],
     log: true,
-    autoMine: true,
+    // autoMine only works on local networks
+    autoMine: hre.network.name === "localhost" || hre.network.name === "hardhat",
   });
 
   // Get the deployed contract to interact with it after deploying.
