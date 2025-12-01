@@ -250,7 +250,7 @@ contract WalletConnectNFT is ERC721URIStorage, ERC721Enumerable, Ownable, Reentr
         ) 
     {
         return (
-            _tokenIds.current(),
+            _tokenIds,
             maxSupply,
             mintPrice,
             mintingEnabled,
@@ -320,7 +320,7 @@ contract WalletConnectNFT is ERC721URIStorage, ERC721Enumerable, Ownable, Reentr
      * @dev Update max supply
      */
     function setMaxSupply(uint256 _newMaxSupply) external onlyOwner {
-        require(_newMaxSupply >= _tokenIds.current(), "Cannot set below current supply");
+        require(_newMaxSupply >= _tokenIds, "Cannot set below current supply");
         maxSupply = _newMaxSupply;
     }
 
