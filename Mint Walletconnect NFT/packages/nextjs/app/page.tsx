@@ -51,21 +51,21 @@ const Home: NextPage = () => {
   const { data: userBalance, refetch: refetchBalance } = useScaffoldReadContract({
     contractName: "WalletConnectNFT",
     functionName: "balanceOf",
-    args: connectedAddress ? [connectedAddress] : undefined,
+    args: connectedAddress ? [connectedAddress] : (undefined as any),
   });
 
   // Read user's mint stats
   const { data: mintStats, refetch: refetchMintStats } = useScaffoldReadContract({
     contractName: "WalletConnectNFT",
     functionName: "getMintStats",
-    args: connectedAddress ? [connectedAddress] : undefined,
+    args: connectedAddress ? [connectedAddress] : (undefined as any),
   });
 
   // Read user's owned tokens
   const { data: ownedTokens, refetch: refetchOwnedTokens } = useScaffoldReadContract({
     contractName: "WalletConnectNFT",
     functionName: "tokensOfOwner",
-    args: connectedAddress ? [connectedAddress] : undefined,
+    args: connectedAddress ? [connectedAddress] : (undefined as any),
   });
 
   // Get user's ETH balance
