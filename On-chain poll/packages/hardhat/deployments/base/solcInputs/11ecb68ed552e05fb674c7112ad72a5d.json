@@ -1,0 +1,36 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/Poll.sol": {
+      "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.20;\r\n\r\ncontract Poll {\r\n    struct PollOption {\r\n        string name;\r\n        uint256 voteCount;\r\n    }\r\n    \r\n    struct PollData {\r\n        string question;\r\n        PollOption[] options;\r\n        uint256 endTime;\r\n        bool active;\r\n        mapping(address => bool) hasVoted;\r\n    }\r\n    \r\n    mapping(uint256 => PollData) public polls;\r\n    uint256 public pollCount;\r\n    \r\n    event PollCreated(uint256 indexed pollId, string question, uint256 endTime);\r\n    event Voted(uint256 indexed pollId, address indexed voter, uint256 optionIndex);\r\n    \r\n    function createPoll(\r\n        string memory _question,\r\n        string[] memory _options,\r\n        uint256 _duration\r\n    ) external returns (uint256) {\r\n        require(_options.length >= 2, \"Need at least 2 options\");\r\n        require(_options.length <= 10, \"Maximum 10 options\");\r\n        \r\n        uint256 pollId = pollCount++;\r\n        PollData storage newPoll = polls[pollId];\r\n        newPoll.question = _question;\r\n        newPoll.endTime = block.timestamp + _duration;\r\n        newPoll.active = true;\r\n        \r\n        for (uint256 i = 0; i < _options.length; i++) {\r\n            newPoll.options.push(PollOption({\r\n                name: _options[i],\r\n                voteCount: 0\r\n            }));\r\n        }\r\n        \r\n        emit PollCreated(pollId, _question, newPoll.endTime);\r\n        return pollId;\r\n    }\r\n    \r\n    function vote(uint256 _pollId, uint256 _optionIndex) external {\r\n        PollData storage poll = polls[_pollId];\r\n        require(poll.active, \"Poll is not active\");\r\n        require(block.timestamp < poll.endTime, \"Poll has ended\");\r\n        require(!poll.hasVoted[msg.sender], \"Already voted\");\r\n        require(_optionIndex < poll.options.length, \"Invalid option\");\r\n        \r\n        poll.hasVoted[msg.sender] = true;\r\n        poll.options[_optionIndex].voteCount++;\r\n        \r\n        emit Voted(_pollId, msg.sender, _optionIndex);\r\n    }\r\n    \r\n    function getPollResults(uint256 _pollId) external view returns (\r\n        string memory question,\r\n        string[] memory optionNames,\r\n        uint256[] memory voteCounts,\r\n        uint256 totalVotes,\r\n        bool active\r\n    ) {\r\n        PollData storage poll = polls[_pollId];\r\n        uint256 optionCount = poll.options.length;\r\n        \r\n        optionNames = new string[](optionCount);\r\n        voteCounts = new uint256[](optionCount);\r\n        totalVotes = 0;\r\n        \r\n        for (uint256 i = 0; i < optionCount; i++) {\r\n            optionNames[i] = poll.options[i].name;\r\n            voteCounts[i] = poll.options[i].voteCount;\r\n            totalVotes += poll.options[i].voteCount;\r\n        }\r\n        \r\n        return (poll.question, optionNames, voteCounts, totalVotes, poll.active);\r\n    }\r\n    \r\n    function hasVoted(uint256 _pollId, address _voter) external view returns (bool) {\r\n        return polls[_pollId].hasVoted[_voter];\r\n    }\r\n}"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "evmVersion": "paris",
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
