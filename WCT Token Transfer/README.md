@@ -77,6 +77,24 @@ Visit the [What's next section of our docs](https://docs.scaffoldeth.io/quick-st
 
 ## Documentation
 
+## 📦 Contract Deployment
+
+The WCToken contract has been successfully deployed to Base Mainnet.
+
+**Deployment Details:**
+- **Contract Address**: [`0xDdF50db778c4D2D821a4Ed21df9e60DeDefeD213`](https://basescan.org/address/0xDdF50db778c4D2D821a4Ed21df9e60DeDefeD213)
+- **Transaction Hash**: `0x49c2f4cd524a5a177ed6a16899729009df9fb380d8da2bfe5230bcc277807e9b`
+- **Gas Used**: 745,556
+
+**Token Information:**
+- **Token Name**: WalletConnect Token
+- **Token Symbol**: WCT
+- **Initial Supply**: 1,000,000 WCT (1,000,000 * 10^18)
+
+The TypeScript contract definition file has been automatically updated at `../nextjs/contracts/deployedContracts.ts`.
+
+## Documentation
+
 Visit our [docs](https://docs.scaffoldeth.io) to learn all the technical details and guides of Scaffold-ETH 2.
 
 To know more about its features, check out our [website](https://scaffoldeth.io).
