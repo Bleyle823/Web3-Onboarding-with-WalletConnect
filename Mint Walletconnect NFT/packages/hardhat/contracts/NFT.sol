@@ -4,8 +4,7 @@ pragma solidity ^0.8.20;
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
 /**
@@ -14,12 +13,11 @@ import "@openzeppelin/contracts/utils/Strings.sol";
  * @notice This contract is designed for easy integration with WalletConnect
  */
 contract WalletConnectNFT is ERC721URIStorage, ERC721Enumerable, Ownable, ReentrancyGuard {
-    using Counters for Counters.Counter;
     using Strings for uint256;
 
     // ============ State Variables ============
     
-    Counters.Counter private _tokenIds;
+    uint256 private _tokenIds;
     
     // Collection info
     string public baseTokenURI;
@@ -75,7 +73,7 @@ contract WalletConnectNFT is ERC721URIStorage, ERC721Enumerable, Ownable, Reentr
     function mint(string memory _tokenURI) external payable nonReentrant returns (uint256) {
         require(mintingEnabled, "Minting is disabled");
         require(publicMintEnabled || whitelist[msg.sender], "Public mint not enabled");
-        require(_tokenIds.current() < maxSupply, "Max supply reached");
+        require(_tokenIds < maxSupply, "Max supply reached");
         require(msg.value >= mintPrice, "Insufficient payment");
         require(
             mintedPerWallet[msg.sender] < maxMintPerWallet,
@@ -101,7 +99,7 @@ contract WalletConnectNFT is ERC721URIStorage, ERC721Enumerable, Ownable, Reentr
         require(_tokenURIs.length > 0, "Must mint at least 1");
         require(_tokenURIs.length <= 20, "Maximum 20 per transaction");
         require(
-            _tokenIds.current() + _tokenURIs.length <= maxSupply,
+            _tokenIds + _tokenURIs.length <= maxSupply,
             "Would exceed max supply"
         );
         require(
@@ -129,7 +127,7 @@ contract WalletConnectNFT is ERC721URIStorage, ERC721Enumerable, Ownable, Reentr
     function freeMint(string memory _tokenURI) external nonReentrant returns (uint256) {
         require(mintingEnabled, "Minting is disabled");
         require(whitelist[msg.sender], "Not whitelisted");
-        require(_tokenIds.current() < maxSupply, "Max supply reached");
+        require(_tokenIds < maxSupply, "Max supply reached");
         require(
             mintedPerWallet[msg.sender] < maxMintPerWallet,
             "Exceeded max mint per wallet"
@@ -148,7 +146,7 @@ contract WalletConnectNFT is ERC721URIStorage, ERC721Enumerable, Ownable, Reentr
         onlyOwner 
         returns (uint256) 
     {
-        require(_tokenIds.current() < maxSupply, "Max supply reached");
+        require(_tokenIds < maxSupply, "Max supply reached");
         return _mintNFT(_to, _tokenURI);
     }
 
@@ -159,8 +157,8 @@ contract WalletConnectNFT is ERC721URIStorage, ERC721Enumerable, Ownable, Reentr
         private 
         returns (uint256) 
     {
-        _tokenIds.increment();
-        uint256 newTokenId = _tokenIds.current();
+        _tokenIds++;
+        uint256 newTokenId = _tokenIds;
 
         _safeMint(_to, newTokenId);
         _setTokenURI(newTokenId, _tokenURI);
@@ -178,7 +176,7 @@ contract WalletConnectNFT is ERC721URIStorage, ERC721Enumerable, Ownable, Reentr
      * @dev Get total minted supply
      */
     function totalSupply() public view override(ERC721Enumerable) returns (uint256) {
-        return _tokenIds.current();
+        return _tokenIds;
     }
 
     /**
@@ -252,7 +250,7 @@ contract WalletConnectNFT is ERC721URIStorage, ERC721Enumerable, Ownable, Reentr
         ) 
     {
         return (
-            _tokenIds.current(),
+            _tokenIds,
             maxSupply,
             mintPrice,
             mintingEnabled,
@@ -322,7 +320,7 @@ contract WalletConnectNFT is ERC721URIStorage, ERC721Enumerable, Ownable, Reentr
      * @dev Update max supply
      */
     function setMaxSupply(uint256 _newMaxSupply) external onlyOwner {
-        require(_newMaxSupply >= _tokenIds.current(), "Cannot set below current supply");
+        require(_newMaxSupply >= _tokenIds, "Cannot set below current supply");
         maxSupply = _newMaxSupply;
     }
 
