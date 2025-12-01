@@ -218,7 +218,7 @@ interface PollCardProps {
 }
 
 const PollCard = ({ pollId, selectedPollId, setSelectedPollId, onVote, address }: PollCardProps) => {
-  const { data: pollResults } = useScaffoldReadContract({
+  const { data: pollResults, refetch: refetchResults } = useScaffoldReadContract({
     contractName: "Poll",
     functionName: "getPollResults",
     args: [BigInt(pollId)],
@@ -230,11 +230,20 @@ const PollCard = ({ pollId, selectedPollId, setSelectedPollId, onVote, address }
     args: [BigInt(pollId)],
   });
 
-  const { data: userHasVoted } = useScaffoldReadContract({
+  const { data: userHasVoted, refetch: refetchVoted } = useScaffoldReadContract({
     contractName: "Poll",
     functionName: "hasVoted",
     args: address ? [BigInt(pollId), address as `0x${string}`] : undefined,
   });
+
+  const handleVoteClick = async (optionIndex: number) => {
+    await onVote(pollId, optionIndex);
+    // Refetch data after voting
+    setTimeout(() => {
+      refetchResults();
+      refetchVoted();
+    }, 2000); // Wait 2 seconds for transaction to be mined
+  };
 
   const isExpanded = selectedPollId === pollId;
   const hasVoted = userHasVoted === true;
@@ -304,7 +313,7 @@ const PollCard = ({ pollId, selectedPollId, setSelectedPollId, onVote, address }
                   {!hasVoted && !isExpired && address && (
                     <button
                       className="btn btn-sm btn-primary"
-                      onClick={() => onVote(pollId, index)}
+                      onClick={() => handleVoteClick(index)}
                     >
                       Vote
                     </button>
