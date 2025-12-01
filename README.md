@@ -123,16 +123,24 @@ An ERC20 token system featuring the "WalletConnect Token" (WCT) with claim funct
 - Token burning functionality
 - Owner-controlled token management
 
+**Contract Address (Base Mainnet):** [`0xDdF50db778c4D2D821a4Ed21df9e60DeDefeD213`](https://basescan.org/address/0xDdF50db778c4D2D821a4Ed21df9e60DeDefeD213)
+
+**Deployment Details:**
+- **Transaction Hash**: `0x49c2f4cd524a5a177ed6a16899729009df9fb380d8da2bfe5230bcc277807e9b`
+- **Gas Used**: 745,556
+
 **Token Details:**
 - Name: WalletConnect Token
 - Symbol: WCT
-- Initial Supply: 1,000,000 WCT
+- Initial Supply: 1,000,000 WCT (1,000,000 * 10^18)
 - Claim Amount: 100 WCT per address
 
 **Contract Functions:**
 - `claim()` - Claim 100 tokens (one-time per address)
 - `burn()` - Burn your tokens
 - Standard ERC20 functions (transfer, approve, etc.)
+
+✅ **Deployment Status**: Successfully deployed to Base Mainnet. TypeScript contract definitions automatically updated.
 
 ---
 
@@ -312,6 +320,7 @@ All projects can be deployed locally using Hardhat's local network.
 Several projects are deployed on **Base Mainnet**:
 - **Mint WalletConnect NFT**: `0xDaDE199589D2dFcFe2328ee92D02B1FD78c53Ea7`
 - **On-Chain Poll**: `0x5C14c249DA94C7757F0B57b178CC887E9b1AA03B`
+- **WCT Token Transfer**: `0xDdF50db778c4D2D821a4Ed21df9e60DeDefeD213`
 
 To deploy to other networks:
 ```bash
