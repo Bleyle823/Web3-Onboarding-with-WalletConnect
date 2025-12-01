@@ -113,21 +113,25 @@ const Home: NextPage = () => {
         // User is whitelisted
         if (mintStats[1] > 0n) {
           // Has remaining free mints
-          await freeMintNFT({
-            functionName: "freeMint",
-            args: [mintTokenURI],
-            onSuccess: () => {
-              toast.success("NFT minted successfully!");
-              setMintTokenURI("");
-              refetchStats();
-              refetchBalance();
-              refetchMintStats();
-              refetchOwnedTokens();
+          await freeMintNFT(
+            {
+              functionName: "freeMint",
+              args: [mintTokenURI],
             },
-            onError: (error: any) => {
-              toast.error(error?.message || "Failed to mint NFT");
+            {
+              onSuccess: () => {
+                toast.success("NFT minted successfully!");
+                setMintTokenURI("");
+                refetchStats();
+                refetchBalance();
+                refetchMintStats();
+                refetchOwnedTokens();
+              },
+              onError: (error: any) => {
+                toast.error(error?.message || "Failed to mint NFT");
+              },
             },
-          });
+          );
         } else {
           // No free mints left, use paid mint
           if (!publicMintEnabled && !mintStats[2]) {
@@ -142,22 +146,26 @@ const Home: NextPage = () => {
             return;
           }
 
-          await mintNFT({
-            functionName: "mint",
-            args: [mintTokenURI],
-            value: mintPrice,
-            onSuccess: () => {
-              toast.success("NFT minted successfully!");
-              setMintTokenURI("");
-              refetchStats();
-              refetchBalance();
-              refetchMintStats();
-              refetchOwnedTokens();
+          await mintNFT(
+            {
+              functionName: "mint",
+              args: [mintTokenURI],
+              value: mintPrice,
             },
-            onError: (error: any) => {
-              toast.error(error?.message || "Failed to mint NFT");
+            {
+              onSuccess: () => {
+                toast.success("NFT minted successfully!");
+                setMintTokenURI("");
+                refetchStats();
+                refetchBalance();
+                refetchMintStats();
+                refetchOwnedTokens();
+              },
+              onError: (error: any) => {
+                toast.error(error?.message || "Failed to mint NFT");
+              },
             },
-          });
+          );
         }
       } else {
         // User is not whitelisted, use paid mint
@@ -173,22 +181,26 @@ const Home: NextPage = () => {
           return;
         }
 
-        await mintNFT({
-          functionName: "mint",
-          args: [mintTokenURI],
-          value: mintPrice,
-          onSuccess: () => {
-            toast.success("NFT minted successfully!");
-            setMintTokenURI("");
-            refetchStats();
-            refetchBalance();
-            refetchMintStats();
-            refetchOwnedTokens();
+        await mintNFT(
+          {
+            functionName: "mint",
+            args: [mintTokenURI],
+            value: mintPrice,
           },
-          onError: (error: any) => {
-            toast.error(error?.message || "Failed to mint NFT");
+          {
+            onSuccess: () => {
+              toast.success("NFT minted successfully!");
+              setMintTokenURI("");
+              refetchStats();
+              refetchBalance();
+              refetchMintStats();
+              refetchOwnedTokens();
+            },
+            onError: (error: any) => {
+              toast.error(error?.message || "Failed to mint NFT");
+            },
           },
-        });
+        );
       }
     } catch (error: any) {
       toast.error(error?.message || "Transaction failed");
