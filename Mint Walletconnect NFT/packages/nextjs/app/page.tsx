@@ -3,21 +3,21 @@
 import { useState } from "react";
 import { Address } from "@scaffold-ui/components";
 import type { NextPage } from "next";
+import toast from "react-hot-toast";
+import { formatEther } from "viem";
 import { hardhat } from "viem/chains";
 import { useAccount } from "wagmi";
-import { formatEther } from "viem";
-import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
-import { useTargetNetwork, useDeployedContractInfo } from "~~/hooks/scaffold-eth";
 import { useBalance } from "wagmi";
-import toast from "react-hot-toast";
 import {
-  SparklesIcon,
-  CurrencyDollarIcon,
-  UserGroupIcon,
-  CubeIcon,
   CheckCircleIcon,
+  CubeIcon,
+  CurrencyDollarIcon,
+  SparklesIcon,
+  UserGroupIcon,
   XCircleIcon,
 } from "@heroicons/react/24/outline";
+import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
+import { useDeployedContractInfo, useTargetNetwork } from "~~/hooks/scaffold-eth";
 
 const Home: NextPage = () => {
   const { address: connectedAddress } = useAccount();
@@ -220,7 +220,6 @@ const Home: NextPage = () => {
   const mintedCount = mintStats ? Number(mintStats[0]) : 0;
   const remainingMints = mintStats ? Number(mintStats[1]) : 0;
   const isWhitelisted = mintStats ? mintStats[2] : false;
-  const userMintPrice = mintStats ? mintStats[3] : 0n;
 
   return (
     <>
@@ -228,12 +227,8 @@ const Home: NextPage = () => {
         <div className="px-5 w-full max-w-6xl">
           {/* Header */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-2">
-              {name || "WalletConnect NFT"}
-            </h1>
-            <p className="text-xl text-base-content/70 mb-4">
-              {symbol || "WCNFT"} Collection on Base
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-2">{name || "WalletConnect NFT"}</h1>
+            <p className="text-xl text-base-content/70 mb-4">{symbol || "WCNFT"} Collection on Base</p>
             {deployedContract && (
               <div className="flex justify-center items-center space-x-2 mb-2">
                 <p className="text-sm font-medium">Contract:</p>
@@ -241,9 +236,7 @@ const Home: NextPage = () => {
                   address={deployedContract.address}
                   chain={targetNetwork}
                   blockExplorerAddressLink={
-                    targetNetwork.id === hardhat.id
-                      ? `/blockexplorer/address/${deployedContract.address}`
-                      : undefined
+                    targetNetwork.id === hardhat.id ? `/blockexplorer/address/${deployedContract.address}` : undefined
                   }
                 />
               </div>
@@ -255,9 +248,7 @@ const Home: NextPage = () => {
                   address={connectedAddress}
                   chain={targetNetwork}
                   blockExplorerAddressLink={
-                    targetNetwork.id === hardhat.id
-                      ? `/blockexplorer/address/${connectedAddress}`
-                      : undefined
+                    targetNetwork.id === hardhat.id ? `/blockexplorer/address/${connectedAddress}` : undefined
                   }
                 />
               </div>
@@ -278,9 +269,7 @@ const Home: NextPage = () => {
             <div className="bg-base-100 rounded-2xl p-6 shadow-lg">
               <div className="flex items-center justify-between mb-2">
                 <CurrencyDollarIcon className="h-8 w-8 text-secondary" />
-                <span className="text-2xl font-bold">
-                  {mintPrice ? formatEther(mintPrice) : "0"} ETH
-                </span>
+                <span className="text-2xl font-bold">{mintPrice ? formatEther(mintPrice) : "0"} ETH</span>
               </div>
               <p className="text-sm text-base-content/70">Mint Price</p>
             </div>
@@ -292,9 +281,7 @@ const Home: NextPage = () => {
                 ) : (
                   <XCircleIcon className="h-8 w-8 text-error" />
                 )}
-                <span className="text-sm font-semibold">
-                  {mintingEnabled ? "Enabled" : "Disabled"}
-                </span>
+                <span className="text-sm font-semibold">{mintingEnabled ? "Enabled" : "Disabled"}</span>
               </div>
               <p className="text-sm text-base-content/70">Minting Status</p>
             </div>
@@ -306,9 +293,7 @@ const Home: NextPage = () => {
                 ) : (
                   <XCircleIcon className="h-8 w-8 text-error" />
                 )}
-                <span className="text-sm font-semibold">
-                  {publicMintEnabled ? "Public" : "Whitelist Only"}
-                </span>
+                <span className="text-sm font-semibold">{publicMintEnabled ? "Public" : "Whitelist Only"}</span>
               </div>
               <p className="text-sm text-base-content/70">Mint Type</p>
             </div>
@@ -354,9 +339,7 @@ const Home: NextPage = () => {
 
             {!connectedAddress ? (
               <div className="text-center py-8">
-                <p className="text-lg text-base-content/70 mb-4">
-                  Connect your wallet to mint NFTs
-                </p>
+                <p className="text-lg text-base-content/70 mb-4">Connect your wallet to mint NFTs</p>
               </div>
             ) : (
               <div className="space-y-4">
@@ -365,13 +348,11 @@ const Home: NextPage = () => {
                   <input
                     type="text"
                     value={mintTokenURI}
-                    onChange={(e) => setMintTokenURI(e.target.value)}
+                    onChange={e => setMintTokenURI(e.target.value)}
                     placeholder="ipfs://Qm..."
                     className="input input-bordered w-full"
                   />
-                  <p className="text-xs text-base-content/50 mt-1">
-                    Enter the IPFS hash or URL for your NFT metadata
-                  </p>
+                  <p className="text-xs text-base-content/50 mt-1">Enter the IPFS hash or URL for your NFT metadata</p>
                 </div>
 
                 <div className="bg-base-200 rounded-lg p-4">
@@ -379,9 +360,7 @@ const Home: NextPage = () => {
                   <ul className="text-xs text-base-content/70 space-y-1">
                     <li>
                       • Price:{" "}
-                      {isWhitelisted && remainingMints > 0
-                        ? "FREE (Whitelisted)"
-                        : `${formatEther(mintPrice)} ETH`}
+                      {isWhitelisted && remainingMints > 0 ? "FREE (Whitelisted)" : `${formatEther(mintPrice)} ETH`}
                     </li>
                     <li>• Your ETH Balance: {ethBalance ? formatEther(ethBalance.value) : "0"} ETH</li>
                     <li>• Remaining Supply: {(maxSupply - currentSupply).toLocaleString()}</li>
@@ -414,12 +393,8 @@ const Home: NextPage = () => {
                   )}
                 </button>
 
-                {currentSupply >= maxSupply && (
-                  <p className="text-error text-center">Maximum supply reached!</p>
-                )}
-                {!mintingEnabled && (
-                  <p className="text-error text-center">Minting is currently disabled</p>
-                )}
+                {currentSupply >= maxSupply && <p className="text-error text-center">Maximum supply reached!</p>}
+                {!mintingEnabled && <p className="text-error text-center">Minting is currently disabled</p>}
               </div>
             )}
           </div>
