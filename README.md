@@ -105,16 +105,35 @@ An interactive trivia game with ERC20 token rewards for correct answers, gamifyi
 - Owner can add new questions
 - Track answered questions per user
 
+**Contract Address (Base Mainnet):** [`0x400C4B0b3E35F924D035C943298fCAF3b38cD80e`](https://basescan.org/address/0x400C4B0b3E35F924D035C943298fCAF3b38cD80e)
+
+**Deployment Details:**
+- **Transaction Hash**: `0xf18dae9a3ed7501323cf07c95bca96510b990e8dbb3790ddaf4b51d0b6007386`
+- **Gas Used**: 656,485
+- **Owner**: `0x62E7a8dBb8D8538e1cDb5D893030Bb16eA00B2F2`
+
+**Reward Token (MockERC20):**
+- **Contract Address**: [`0x0a779316d2D99C1B3546C57542Bc4b0321ba0140`](https://basescan.org/address/0x0a779316d2D99C1B3546C57542Bc4b0321ba0140)
+- **Token Name**: Mock Reward Token (MRT)
+- **Initial Supply**: 1,000,000 MRT
+- **Trivia Contract Balance**: 100,000 MRT (for rewards)
+- **Deployment Transaction**: `0x1fa1c6aa5d60ba306cd54b50cec576dfd4896fb50ce6c9ec5ea9d9e035a6f7db`
+- **Gas Used**: 558,189
+
 **Contract Functions:**
-- `addQuestion()` - Owner adds new trivia questions
-- `answerQuestion()` - Players answer and earn rewards
+- `addQuestion(string question, string[] options, uint8 correctAnswer)` - Owner adds new trivia questions
+- `answerQuestion(uint256 questionId, uint8 answer)` - Players answer and earn rewards
 - `getQuestionCount()` - View available questions
+- `getQuestion(uint256 questionId)` - Get question details
+- `hasAnswered(address user, uint256 questionId)` - Check if user has answered
+
+✅ **Deployment Status**: Successfully deployed to Base Mainnet with reward token system.
 
 ---
 
 ### 5. 💰 WCT Token Transfer
 
-An ERC20 token system featuring the "WalletConnect Token" (WCT) with claim functionality for user onboarding.
+An ERC20 token system featuring the "WalletConnect Token" (WCT) with claim functionality for user onboarding and a comprehensive frontend interface.
 
 **Features:**
 - ERC20 standard token: "WalletConnect Token" (WCT)
@@ -122,25 +141,39 @@ An ERC20 token system featuring the "WalletConnect Token" (WCT) with claim funct
 - One-time claim of 100 tokens per address
 - Token burning functionality
 - Owner-controlled token management
+- **Full-featured frontend interface** for all token operations
 
 **Contract Address (Base Mainnet):** [`0xDdF50db778c4D2D821a4Ed21df9e60DeDefeD213`](https://basescan.org/address/0xDdF50db778c4D2D821a4Ed21df9e60DeDefeD213)
 
 **Deployment Details:**
 - **Transaction Hash**: `0x49c2f4cd524a5a177ed6a16899729009df9fb380d8da2bfe5230bcc277807e9b`
 - **Gas Used**: 745,556
+- **Deployed Block**: 38,918,297
 
 **Token Details:**
 - Name: WalletConnect Token
 - Symbol: WCT
 - Initial Supply: 1,000,000 WCT (1,000,000 * 10^18)
+- Decimals: 18
 - Claim Amount: 100 WCT per address
 
 **Contract Functions:**
 - `claim()` - Claim 100 tokens (one-time per address)
-- `burn()` - Burn your tokens
-- Standard ERC20 functions (transfer, approve, etc.)
+- `burn(uint256 amount)` - Burn your tokens
+- `transfer(address to, uint256 amount)` - Transfer tokens
+- `approve(address spender, uint256 amount)` - Approve token spending
+- Standard ERC20 functions (balanceOf, totalSupply, etc.)
 
-✅ **Deployment Status**: Successfully deployed to Base Mainnet. TypeScript contract definitions automatically updated.
+**Frontend Interface:**
+- ✅ **Token Information Display** - Real-time balance, supply, and token details
+- ✅ **Claim Interface** - One-click claim of 100 WCT tokens
+- ✅ **Transfer Interface** - Send tokens to any address
+- ✅ **Burn Interface** - Permanently burn tokens
+- ✅ **Approve Interface** - Approve tokens for DeFi interactions
+- ✅ **WalletConnect Integration** - Connect with 700+ wallets
+- ✅ **Real-time Updates** - Automatic balance and data refresh
+
+✅ **Deployment Status**: Successfully deployed to Base Mainnet. Frontend interface fully functional. TypeScript contract definitions automatically updated.
 
 ---
 
