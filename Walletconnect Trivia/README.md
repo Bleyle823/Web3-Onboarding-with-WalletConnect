@@ -75,8 +75,6 @@ Visit the [What's next section of our docs](https://docs.scaffoldeth.io/quick-st
 - Writing and running tests
 - [Setting up external services and API keys](https://docs.scaffoldeth.io/deploying/deploy-smart-contracts#configuration-of-third-party-services-for-production-grade-apps)
 
-## Documentation
-
 ## 📋 Deployed Contracts (Base Mainnet)
 
 The following contracts have been deployed to **Base Mainnet**:
