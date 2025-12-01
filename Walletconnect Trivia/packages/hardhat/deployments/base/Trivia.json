@@ -1,0 +1,359 @@
+{
+  "address": "0x400C4B0b3E35F924D035C943298fCAF3b38cD80e",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "questionId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "player",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "reward",
+          "type": "uint256"
+        }
+      ],
+      "name": "CorrectAnswer",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "questionId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "reward",
+          "type": "uint256"
+        }
+      ],
+      "name": "QuestionAdded",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_question",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_answer",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_reward",
+          "type": "uint256"
+        }
+      ],
+      "name": "addQuestion",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_questionId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "_answer",
+          "type": "string"
+        }
+      ],
+      "name": "answerQuestion",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getQuestionCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "hasAnswered",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "questions",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "question",
+          "type": "string"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "answerHash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "reward",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "active",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "rewardToken",
+      "outputs": [
+        {
+          "internalType": "contract IERC20",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xf18dae9a3ed7501323cf07c95bca96510b990e8dbb3790ddaf4b51d0b6007386",
+  "receipt": {
+    "to": null,
+    "from": "0x62E7a8dBb8D8538e1cDb5D893030Bb16eA00B2F2",
+    "contractAddress": "0x400C4B0b3E35F924D035C943298fCAF3b38cD80e",
+    "transactionIndex": 53,
+    "gasUsed": "656485",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x88fa7ab2843cde75598d5bc4a0defd6398adcdddae49c4a51c4544aebc353b34",
+    "transactionHash": "0xf18dae9a3ed7501323cf07c95bca96510b990e8dbb3790ddaf4b51d0b6007386",
+    "logs": [],
+    "blockNumber": 38917263,
+    "cumulativeGasUsed": "21645080",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x0a779316d2D99C1B3546C57542Bc4b0321ba0140"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "f0f60d908d37af6b1cec3302deafd98a",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_token\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"questionId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"player\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"reward\",\"type\":\"uint256\"}],\"name\":\"CorrectAnswer\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"questionId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"reward\",\"type\":\"uint256\"}],\"name\":\"QuestionAdded\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_question\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_answer\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"_reward\",\"type\":\"uint256\"}],\"name\":\"addQuestion\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_questionId\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_answer\",\"type\":\"string\"}],\"name\":\"answerQuestion\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getQuestionCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"hasAnswered\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"questions\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"question\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"answerHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"reward\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"active\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardToken\",\"outputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Trivia.sol\":\"Trivia\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v5.0.0) (token/ERC20/IERC20.sol)\\n\\npragma solidity ^0.8.20;\\n\\n/**\\n * @dev Interface of the ERC20 standard as defined in the EIP.\\n */\\ninterface IERC20 {\\n    /**\\n     * @dev Emitted when `value` tokens are moved from one account (`from`) to\\n     * another (`to`).\\n     *\\n     * Note that `value` may be zero.\\n     */\\n    event Transfer(address indexed from, address indexed to, uint256 value);\\n\\n    /**\\n     * @dev Emitted when the allowance of a `spender` for an `owner` is set by\\n     * a call to {approve}. `value` is the new allowance.\\n     */\\n    event Approval(address indexed owner, address indexed spender, uint256 value);\\n\\n    /**\\n     * @dev Returns the value of tokens in existence.\\n     */\\n    function totalSupply() external view returns (uint256);\\n\\n    /**\\n     * @dev Returns the value of tokens owned by `account`.\\n     */\\n    function balanceOf(address account) external view returns (uint256);\\n\\n    /**\\n     * @dev Moves a `value` amount of tokens from the caller's account to `to`.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transfer(address to, uint256 value) external returns (bool);\\n\\n    /**\\n     * @dev Returns the remaining number of tokens that `spender` will be\\n     * allowed to spend on behalf of `owner` through {transferFrom}. This is\\n     * zero by default.\\n     *\\n     * This value changes when {approve} or {transferFrom} are called.\\n     */\\n    function allowance(address owner, address spender) external view returns (uint256);\\n\\n    /**\\n     * @dev Sets a `value` amount of tokens as the allowance of `spender` over the\\n     * caller's tokens.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * IMPORTANT: Beware that changing an allowance with this method brings the risk\\n     * that someone may use both the old and the new allowance by unfortunate\\n     * transaction ordering. One possible solution to mitigate this race\\n     * condition is to first reduce the spender's allowance to 0 and set the\\n     * desired value afterwards:\\n     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729\\n     *\\n     * Emits an {Approval} event.\\n     */\\n    function approve(address spender, uint256 value) external returns (bool);\\n\\n    /**\\n     * @dev Moves a `value` amount of tokens from `from` to `to` using the\\n     * allowance mechanism. `value` is then deducted from the caller's\\n     * allowance.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transferFrom(address from, address to, uint256 value) external returns (bool);\\n}\\n\",\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\"},\"contracts/Trivia.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity ^0.8.20;\\r\\n\\r\\nimport \\\"@openzeppelin/contracts/token/ERC20/IERC20.sol\\\";\\r\\n\\r\\ncontract Trivia {\\r\\n    IERC20 public rewardToken;\\r\\n    address public owner;\\r\\n    \\r\\n    struct Question {\\r\\n        string question;\\r\\n        bytes32 answerHash;\\r\\n        uint256 reward;\\r\\n        bool active;\\r\\n    }\\r\\n    \\r\\n    Question[] public questions;\\r\\n    mapping(uint256 => mapping(address => bool)) public hasAnswered;\\r\\n    \\r\\n    event QuestionAdded(uint256 indexed questionId, uint256 reward);\\r\\n    event CorrectAnswer(uint256 indexed questionId, address indexed player, uint256 reward);\\r\\n    \\r\\n    constructor(address _token) {\\r\\n        rewardToken = IERC20(_token);\\r\\n        owner = msg.sender;\\r\\n    }\\r\\n    \\r\\n    function addQuestion(\\r\\n        string memory _question,\\r\\n        string memory _answer,\\r\\n        uint256 _reward\\r\\n    ) external {\\r\\n        require(msg.sender == owner, \\\"Only owner\\\");\\r\\n        bytes32 answerHash = keccak256(abi.encodePacked(_answer));\\r\\n        \\r\\n        questions.push(Question({\\r\\n            question: _question,\\r\\n            answerHash: answerHash,\\r\\n            reward: _reward,\\r\\n            active: true\\r\\n        }));\\r\\n        \\r\\n        emit QuestionAdded(questions.length - 1, _reward);\\r\\n    }\\r\\n    \\r\\n    function answerQuestion(uint256 _questionId, string memory _answer) external {\\r\\n        require(_questionId < questions.length, \\\"Invalid question\\\");\\r\\n        Question storage q = questions[_questionId];\\r\\n        require(q.active, \\\"Question inactive\\\");\\r\\n        require(!hasAnswered[_questionId][msg.sender], \\\"Already answered\\\");\\r\\n        \\r\\n        bytes32 answerHash = keccak256(abi.encodePacked(_answer));\\r\\n        require(answerHash == q.answerHash, \\\"Wrong answer\\\");\\r\\n        \\r\\n        hasAnswered[_questionId][msg.sender] = true;\\r\\n        rewardToken.transfer(msg.sender, q.reward);\\r\\n        \\r\\n        emit CorrectAnswer(_questionId, msg.sender, q.reward);\\r\\n    }\\r\\n    \\r\\n    function getQuestionCount() external view returns (uint256) {\\r\\n        return questions.length;\\r\\n    }\\r\\n}\",\"keccak256\":\"0xbc951d17818ff8349419e0942af5c0f563956834b960120e14ccabe1ac78d599\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50604051610aad380380610aad83398101604081905261002f9161005d565b600080546001600160a01b039092166001600160a01b0319928316179055600180549091163317905561008d565b60006020828403121561006f57600080fd5b81516001600160a01b038116811461008657600080fd5b9392505050565b610a118061009c6000396000f3fe608060405234801561001057600080fd5b506004361061007d5760003560e01c80638da5cb5b1161005b5780638da5cb5b146100d6578063dd41cc2f14610101578063e6b4eacf14610112578063f7c618c11461015057600080fd5b8063240990cb1461008257806331b1b97814610097578063447e52a0146100c3575b600080fd5b61009561009036600461069a565b610163565b005b6100aa6100a5366004610707565b6102bd565b6040516100ba9493929190610744565b60405180910390f35b6100956100d136600461078d565b61038a565b6001546100e9906001600160a01b031681565b6040516001600160a01b0390911681526020016100ba565b6002546040519081526020016100ba565b6101406101203660046107d4565b600360209081526000928352604080842090915290825290205460ff1681565b60405190151581526020016100ba565b6000546100e9906001600160a01b031681565b6001546001600160a01b031633146101af5760405162461bcd60e51b815260206004820152600a60248201526927b7363c9037bbb732b960b11b60448201526064015b60405180910390fd5b6000826040516020016101c29190610810565b60408051601f19818403018152828252805160209182012060808401835287845290830181905290820184905260016060830181905260028054918201815560005282519193506004027f405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace0190819061023b90826108b5565b50602082015181600101556040820151816002015560608201518160030160006101000a81548160ff021916908315150217905550505060016002805490506102849190610975565b6040518381527fe5ac7a6f7f975d3d3ba41acafad3abf1430692be1442c6bde74a8ae06b3853559060200160405180910390a250505050565b600281815481106102cd57600080fd5b90600052602060002090600402016000915090508060000180546102f09061082c565b80601f016020809104026020016040519081016040528092919081815260200182805461031c9061082c565b80156103695780601f1061033e57610100808354040283529160200191610369565b820191906000526020600020905b81548152906001019060200180831161034c57829003601f168201915b50505050600183015460028401546003909401549293909290915060ff1684565b60025482106103ce5760405162461bcd60e51b815260206004820152601060248201526f24b73b30b634b21038bab2b9ba34b7b760811b60448201526064016101a6565b6000600283815481106103e3576103e361099c565b60009182526020909120600490910201600381015490915060ff1661043e5760405162461bcd60e51b81526020600482015260116024820152705175657374696f6e20696e61637469766560781b60448201526064016101a6565b600083815260036020908152604080832033845290915290205460ff161561049b5760405162461bcd60e51b815260206004820152601060248201526f105b1c9958591e48185b9cddd95c995960821b60448201526064016101a6565b6000826040516020016104ae9190610810565b604051602081830303815290604052805190602001209050816001015481146105085760405162461bcd60e51b815260206004820152600c60248201526b2bb937b7339030b739bbb2b960a11b60448201526064016101a6565b6000848152600360209081526040808320338085529252808320805460ff1916600117905591546002850154925163a9059cbb60e01b8152600481019290925260248201929092526001600160a01b039091169063a9059cbb906044016020604051808303816000875af1158015610584573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105a891906109b2565b50336001600160a01b0316847f95eb5b5758f128c0e79107d87755f8689dd3e43c0145c710e104f988d6679d6284600201546040516105e991815260200190565b60405180910390a350505050565b634e487b7160e01b600052604160045260246000fd5b600082601f83011261061e57600080fd5b813567ffffffffffffffff80821115610639576106396105f7565b604051601f8301601f19908116603f01168101908282118183101715610661576106616105f7565b8160405283815286602085880101111561067a57600080fd5b836020870160208301376000602085830101528094505050505092915050565b6000806000606084860312156106af57600080fd5b833567ffffffffffffffff808211156106c757600080fd5b6106d38783880161060d565b945060208601359150808211156106e957600080fd5b506106f68682870161060d565b925050604084013590509250925092565b60006020828403121561071957600080fd5b5035919050565b60005b8381101561073b578181015183820152602001610723565b50506000910152565b60808152600085518060808401526107638160a0850160208a01610720565b60208301959095525060408101929092521515606082015260a0601f909201601f19160101919050565b600080604083850312156107a057600080fd5b82359150602083013567ffffffffffffffff8111156107be57600080fd5b6107ca8582860161060d565b9150509250929050565b600080604083850312156107e757600080fd5b8235915060208301356001600160a01b038116811461080557600080fd5b809150509250929050565b60008251610822818460208701610720565b9190910192915050565b600181811c9082168061084057607f821691505b60208210810361086057634e487b7160e01b600052602260045260246000fd5b50919050565b601f8211156108b057600081815260208120601f850160051c8101602086101561088d5750805b601f850160051c820191505b818110156108ac57828155600101610899565b5050505b505050565b815167ffffffffffffffff8111156108cf576108cf6105f7565b6108e3816108dd845461082c565b84610866565b602080601f83116001811461091857600084156109005750858301515b600019600386901b1c1916600185901b1785556108ac565b600085815260208120601f198616915b8281101561094757888601518255948401946001909101908401610928565b50858210156109655787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b8181038181111561099657634e487b7160e01b600052601160045260246000fd5b92915050565b634e487b7160e01b600052603260045260246000fd5b6000602082840312156109c457600080fd5b815180151581146109d457600080fd5b939250505056fea2646970667358221220b62abb2f4485db19809666bb0295e47f5ecf95dabdb9f28d595ea6a5701ba05d64736f6c63430008140033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061007d5760003560e01c80638da5cb5b1161005b5780638da5cb5b146100d6578063dd41cc2f14610101578063e6b4eacf14610112578063f7c618c11461015057600080fd5b8063240990cb1461008257806331b1b97814610097578063447e52a0146100c3575b600080fd5b61009561009036600461069a565b610163565b005b6100aa6100a5366004610707565b6102bd565b6040516100ba9493929190610744565b60405180910390f35b6100956100d136600461078d565b61038a565b6001546100e9906001600160a01b031681565b6040516001600160a01b0390911681526020016100ba565b6002546040519081526020016100ba565b6101406101203660046107d4565b600360209081526000928352604080842090915290825290205460ff1681565b60405190151581526020016100ba565b6000546100e9906001600160a01b031681565b6001546001600160a01b031633146101af5760405162461bcd60e51b815260206004820152600a60248201526927b7363c9037bbb732b960b11b60448201526064015b60405180910390fd5b6000826040516020016101c29190610810565b60408051601f19818403018152828252805160209182012060808401835287845290830181905290820184905260016060830181905260028054918201815560005282519193506004027f405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace0190819061023b90826108b5565b50602082015181600101556040820151816002015560608201518160030160006101000a81548160ff021916908315150217905550505060016002805490506102849190610975565b6040518381527fe5ac7a6f7f975d3d3ba41acafad3abf1430692be1442c6bde74a8ae06b3853559060200160405180910390a250505050565b600281815481106102cd57600080fd5b90600052602060002090600402016000915090508060000180546102f09061082c565b80601f016020809104026020016040519081016040528092919081815260200182805461031c9061082c565b80156103695780601f1061033e57610100808354040283529160200191610369565b820191906000526020600020905b81548152906001019060200180831161034c57829003601f168201915b50505050600183015460028401546003909401549293909290915060ff1684565b60025482106103ce5760405162461bcd60e51b815260206004820152601060248201526f24b73b30b634b21038bab2b9ba34b7b760811b60448201526064016101a6565b6000600283815481106103e3576103e361099c565b60009182526020909120600490910201600381015490915060ff1661043e5760405162461bcd60e51b81526020600482015260116024820152705175657374696f6e20696e61637469766560781b60448201526064016101a6565b600083815260036020908152604080832033845290915290205460ff161561049b5760405162461bcd60e51b815260206004820152601060248201526f105b1c9958591e48185b9cddd95c995960821b60448201526064016101a6565b6000826040516020016104ae9190610810565b604051602081830303815290604052805190602001209050816001015481146105085760405162461bcd60e51b815260206004820152600c60248201526b2bb937b7339030b739bbb2b960a11b60448201526064016101a6565b6000848152600360209081526040808320338085529252808320805460ff1916600117905591546002850154925163a9059cbb60e01b8152600481019290925260248201929092526001600160a01b039091169063a9059cbb906044016020604051808303816000875af1158015610584573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105a891906109b2565b50336001600160a01b0316847f95eb5b5758f128c0e79107d87755f8689dd3e43c0145c710e104f988d6679d6284600201546040516105e991815260200190565b60405180910390a350505050565b634e487b7160e01b600052604160045260246000fd5b600082601f83011261061e57600080fd5b813567ffffffffffffffff80821115610639576106396105f7565b604051601f8301601f19908116603f01168101908282118183101715610661576106616105f7565b8160405283815286602085880101111561067a57600080fd5b836020870160208301376000602085830101528094505050505092915050565b6000806000606084860312156106af57600080fd5b833567ffffffffffffffff808211156106c757600080fd5b6106d38783880161060d565b945060208601359150808211156106e957600080fd5b506106f68682870161060d565b925050604084013590509250925092565b60006020828403121561071957600080fd5b5035919050565b60005b8381101561073b578181015183820152602001610723565b50506000910152565b60808152600085518060808401526107638160a0850160208a01610720565b60208301959095525060408101929092521515606082015260a0601f909201601f19160101919050565b600080604083850312156107a057600080fd5b82359150602083013567ffffffffffffffff8111156107be57600080fd5b6107ca8582860161060d565b9150509250929050565b600080604083850312156107e757600080fd5b8235915060208301356001600160a01b038116811461080557600080fd5b809150509250929050565b60008251610822818460208701610720565b9190910192915050565b600181811c9082168061084057607f821691505b60208210810361086057634e487b7160e01b600052602260045260246000fd5b50919050565b601f8211156108b057600081815260208120601f850160051c8101602086101561088d5750805b601f850160051c820191505b818110156108ac57828155600101610899565b5050505b505050565b815167ffffffffffffffff8111156108cf576108cf6105f7565b6108e3816108dd845461082c565b84610866565b602080601f83116001811461091857600084156109005750858301515b600019600386901b1c1916600185901b1785556108ac565b600085815260208120601f198616915b8281101561094757888601518255948401946001909101908401610928565b50858210156109655787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b8181038181111561099657634e487b7160e01b600052601160045260246000fd5b92915050565b634e487b7160e01b600052603260045260246000fd5b6000602082840312156109c457600080fd5b815180151581146109d457600080fd5b939250505056fea2646970667358221220b62abb2f4485db19809666bb0295e47f5ecf95dabdb9f28d595ea6a5701ba05d64736f6c63430008140033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 816,
+        "contract": "contracts/Trivia.sol:Trivia",
+        "label": "rewardToken",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_contract(IERC20)729"
+      },
+      {
+        "astId": 818,
+        "contract": "contracts/Trivia.sol:Trivia",
+        "label": "owner",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_address"
+      },
+      {
+        "astId": 831,
+        "contract": "contracts/Trivia.sol:Trivia",
+        "label": "questions",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_array(t_struct(Question)827_storage)dyn_storage"
+      },
+      {
+        "astId": 837,
+        "contract": "contracts/Trivia.sol:Trivia",
+        "label": "hasAnswered",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_mapping(t_uint256,t_mapping(t_address,t_bool))"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_struct(Question)827_storage)dyn_storage": {
+        "base": "t_struct(Question)827_storage",
+        "encoding": "dynamic_array",
+        "label": "struct Trivia.Question[]",
+        "numberOfBytes": "32"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_contract(IERC20)729": {
+        "encoding": "inplace",
+        "label": "contract IERC20",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_mapping(t_uint256,t_mapping(t_address,t_bool))": {
+        "encoding": "mapping",
+        "key": "t_uint256",
+        "label": "mapping(uint256 => mapping(address => bool))",
+        "numberOfBytes": "32",
+        "value": "t_mapping(t_address,t_bool)"
+      },
+      "t_string_storage": {
+        "encoding": "bytes",
+        "label": "string",
+        "numberOfBytes": "32"
+      },
+      "t_struct(Question)827_storage": {
+        "encoding": "inplace",
+        "label": "struct Trivia.Question",
+        "members": [
+          {
+            "astId": 820,
+            "contract": "contracts/Trivia.sol:Trivia",
+            "label": "question",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 822,
+            "contract": "contracts/Trivia.sol:Trivia",
+            "label": "answerHash",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_bytes32"
+          },
+          {
+            "astId": 824,
+            "contract": "contracts/Trivia.sol:Trivia",
+            "label": "reward",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 826,
+            "contract": "contracts/Trivia.sol:Trivia",
+            "label": "active",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_bool"
+          }
+        ],
+        "numberOfBytes": "128"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
