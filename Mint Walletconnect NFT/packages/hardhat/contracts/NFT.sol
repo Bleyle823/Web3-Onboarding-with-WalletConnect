@@ -127,7 +127,7 @@ contract WalletConnectNFT is ERC721URIStorage, ERC721Enumerable, Ownable, Reentr
     function freeMint(string memory _tokenURI) external nonReentrant returns (uint256) {
         require(mintingEnabled, "Minting is disabled");
         require(whitelist[msg.sender], "Not whitelisted");
-        require(_tokenIds.current() < maxSupply, "Max supply reached");
+        require(_tokenIds < maxSupply, "Max supply reached");
         require(
             mintedPerWallet[msg.sender] < maxMintPerWallet,
             "Exceeded max mint per wallet"
@@ -146,7 +146,7 @@ contract WalletConnectNFT is ERC721URIStorage, ERC721Enumerable, Ownable, Reentr
         onlyOwner 
         returns (uint256) 
     {
-        require(_tokenIds.current() < maxSupply, "Max supply reached");
+        require(_tokenIds < maxSupply, "Max supply reached");
         return _mintNFT(_to, _tokenURI);
     }
 
