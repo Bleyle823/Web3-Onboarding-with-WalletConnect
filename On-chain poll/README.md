@@ -21,6 +21,54 @@
 
 **View on BaseScan:** [https://basescan.org/address/0x5C14c249DA94C7757F0B57b178CC887E9b1AA03B](https://basescan.org/address/0x5C14c249DA94C7757F0B57b178CC887E9b1AA03B)
 
+## 🌐 Frontend Deployment
+
+The frontend is deployed on Vercel and ready to interact with the Poll contract:
+
+- **Production:** [https://nextjs-zeta-one-98.vercel.app](https://nextjs-zeta-one-98.vercel.app)
+- **Preview:** [https://nextjs-mi8jd3x14-bleyle125s-projects.vercel.app](https://nextjs-mi8jd3x14-bleyle125s-projects.vercel.app)
+
+Visit the deployed app to:
+- Create new polls with custom questions and options
+- Vote on active polls
+- View real-time poll results with vote counts and percentages
+- Check voting status for your connected wallet
+
+## 🔗 WalletConnect/Reown Integration
+
+This project is fully compatible with **WalletConnect** and **Reown** (formerly WalletConnect Inc.) for seamless wallet connections.
+
+### Wallet Support
+
+The app uses **RainbowKit** which is built on top of **WalletConnect/Reown**, enabling connections to:
+- **700+ wallets** via the WalletConnect Network
+- **65,000+ apps** across EVM, Solana, Bitcoin, and more
+- Direct connections to popular wallets: MetaMask, Coinbase Wallet, Ledger, Rainbow, Safe, and more
+
+### Configuration
+
+The project is pre-configured with WalletConnect/Reown for secure wallet connections:
+- **WalletConnect Project ID**: Uses default project ID - works out of the box, no setup required
+- **Network Support**: Base Mainnet (EVM-compatible)
+- **Ready to Use**: All default values are configured and ready for immediate use
+
+### Configuration
+
+The project uses default values that work out of the box:
+- **WalletConnect Project ID**: Pre-configured default (no setup needed)
+- **Alchemy API Key**: Pre-configured default (no setup needed)
+- **Network**: Base Mainnet (8453)
+
+All default values are ready to use for both development and production. No environment variables required!
+
+### Resources
+
+- [Reown AppKit Documentation](https://docs.reown.com/appkit/overview)
+- [WalletConnect App SDK Documentation](https://docs.walletconnect.network/app-sdk/overview)
+- [RainbowKit Documentation](https://www.rainbowkit.com/docs/introduction)
+- [Get Your WalletConnect Project ID](https://cloud.walletconnect.com)
+- [Reown Cloud Dashboard](https://cloud.walletconnect.com)
+
 ### Contract Features
 
 The Poll contract allows users to:

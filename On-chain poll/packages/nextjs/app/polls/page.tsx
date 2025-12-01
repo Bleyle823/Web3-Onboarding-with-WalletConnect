@@ -233,7 +233,10 @@ const PollCard = ({ pollId, selectedPollId, setSelectedPollId, onVote, address }
   const { data: userHasVoted, refetch: refetchVoted } = useScaffoldReadContract({
     contractName: "Poll",
     functionName: "hasVoted",
-    args: address ? [BigInt(pollId), address as `0x${string}`] : undefined,
+    args: [BigInt(pollId), address as `0x${string}`],
+    query: {
+      enabled: !!address,
+    },
   });
 
   const handleVoteClick = async (optionIndex: number) => {
