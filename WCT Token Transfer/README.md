@@ -85,13 +85,72 @@ The WCToken contract has been successfully deployed to Base Mainnet.
 - **Contract Address**: [`0xDdF50db778c4D2D821a4Ed21df9e60DeDefeD213`](https://basescan.org/address/0xDdF50db778c4D2D821a4Ed21df9e60DeDefeD213)
 - **Transaction Hash**: `0x49c2f4cd524a5a177ed6a16899729009df9fb380d8da2bfe5230bcc277807e9b`
 - **Gas Used**: 745,556
+- **Deployed Block**: 38,918,297
 
 **Token Information:**
 - **Token Name**: WalletConnect Token
 - **Token Symbol**: WCT
 - **Initial Supply**: 1,000,000 WCT (1,000,000 * 10^18)
+- **Decimals**: 18
 
 The TypeScript contract definition file has been automatically updated at `../nextjs/contracts/deployedContracts.ts`.
+
+## 🎨 Frontend Interface
+
+A comprehensive frontend interface has been created to interact with the WCToken smart contract.
+
+### Features
+
+- **Token Information Display**
+  - Real-time token name, symbol, and decimals
+  - User balance and total supply
+  - Initial supply information
+  - Connected wallet address display
+
+- **Claim Tokens**
+  - One-time claim of 100 WCT tokens
+  - Automatic validation (only if balance is 0)
+  - Loading states and transaction feedback
+
+- **Transfer Tokens**
+  - Send WCT tokens to any address
+  - Amount input with validation
+  - Real-time balance updates
+
+- **Burn Tokens**
+  - Permanently burn your WCT tokens
+  - Amount input with validation
+  - Transaction confirmation
+
+- **Approve Tokens**
+  - Approve spender addresses for token transfers
+  - Useful for DEX interactions and DeFi protocols
+  - Amount-based approval system
+
+### Usage
+
+1. **Start the development server:**
+   ```bash
+   yarn start
+   ```
+
+2. **Connect your wallet** using WalletConnect (supports 700+ wallets)
+
+3. **Interact with the contract:**
+   - View your token balance and contract information
+   - Claim 100 WCT tokens (one-time only)
+   - Transfer tokens to other addresses
+   - Burn tokens to reduce supply
+   - Approve tokens for DeFi interactions
+
+### Component Location
+
+The main interface component is located at:
+- `packages/nextjs/components/WCTokenInterface.tsx`
+
+The component uses Scaffold-ETH 2 hooks:
+- `useScaffoldReadContract` - For reading contract data
+- `useScaffoldWriteContract` - For writing transactions
 
 ## Documentation
 

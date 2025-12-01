@@ -77,28 +77,33 @@ Visit the [What's next section of our docs](https://docs.scaffoldeth.io/quick-st
 
 ## 📋 Deployed Contracts (Base Mainnet)
 
-The following contracts have been deployed to **Base Mainnet**:
+The following contracts have been successfully deployed to **Base Mainnet**:
 
-### Contracts
+### Trivia Contract
 
-- **Trivia Contract**: `0x400C4B0b3E35F924D035C943298fCAF3b38cD80e`
-  - [View on Basescan](https://basescan.org/address/0x400C4B0b3E35F924D035C943298fCAF3b38cD80e)
-  - Owner: `0x62E7a8dBb8D8538e1cDb5D893030Bb16eA00B2F2`
-  - Reward Token: `0x0a779316d2D99C1B3546C57542Bc4b0321ba0140`
+- **Contract Address**: [`0x400C4B0b3E35F924D035C943298fCAF3b38cD80e`](https://basescan.org/address/0x400C4B0b3E35F924D035C943298fCAF3b38cD80e)
+- **Deployment Transaction**: `0xf18dae9a3ed7501323cf07c95bca96510b990e8dbb3790ddaf4b51d0b6007386`
+- **Gas Used**: 656,485
+- **Owner**: `0x62E7a8dBb8D8538e1cDb5D893030Bb16eA00B2F2`
+- **Reward Token**: `0x0a779316d2D99C1B3546C57542Bc4b0321ba0140`
 
-- **MockERC20 Token**: `0x0a779316d2D99C1B3546C57542Bc4b0321ba0140`
-  - [View on Basescan](https://basescan.org/address/0x0a779316d2D99C1B3546C57542Bc4b0321ba0140)
-  - Token Name: Mock Reward Token (MRT)
-  - Initial Supply: 1,000,000 MRT
-  - Trivia Contract Balance: 100,000 MRT (for rewards)
+### MockERC20 Reward Token
 
-### Deployment Details
+- **Contract Address**: [`0x0a779316d2D99C1B3546C57542Bc4b0321ba0140`](https://basescan.org/address/0x0a779316d2D99C1B3546C57542Bc4b0321ba0140)
+- **Deployment Transaction**: `0x1fa1c6aa5d60ba306cd54b50cec576dfd4896fb50ce6c9ec5ea9d9e035a6f7db`
+- **Gas Used**: 558,189
+- **Token Name**: Mock Reward Token (MRT)
+- **Token Symbol**: MRT
+- **Initial Supply**: 1,000,000 MRT
+- **Trivia Contract Balance**: 100,000 MRT (allocated for rewards)
 
-- **Network**: Base Mainnet
-- **Deployment Transaction (MockERC20)**: `0x1fa1c6aa5d60ba306cd54b50cec576dfd4896fb50ce6c9ec5ea9d9e035a6f7db`
-- **Deployment Transaction (Trivia)**: `0xf18dae9a3ed7501323cf07c95bca96510b990e8dbb3790ddaf4b51d0b6007386`
-- **Gas Used (MockERC20)**: 558,189
-- **Gas Used (Trivia)**: 656,485
+### Deployment Summary
+
+- **Network**: Base Mainnet (Chain ID: 8453)
+- **Total Gas Used**: 1,214,674 (MockERC20 + Trivia)
+- **Status**: ✅ Successfully deployed and operational
+
+The TypeScript contract definition files have been automatically updated at `../nextjs/contracts/deployedContracts.ts`.
 
 ## Documentation
 
