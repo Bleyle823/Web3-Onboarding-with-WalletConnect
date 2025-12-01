@@ -77,6 +77,33 @@ Visit the [What's next section of our docs](https://docs.scaffoldeth.io/quick-st
 
 ## Documentation
 
+## 📋 Deployed Contracts (Base Mainnet)
+
+The following contracts have been deployed to **Base Mainnet**:
+
+### Contracts
+
+- **Trivia Contract**: `0x400C4B0b3E35F924D035C943298fCAF3b38cD80e`
+  - [View on Basescan](https://basescan.org/address/0x400C4B0b3E35F924D035C943298fCAF3b38cD80e)
+  - Owner: `0x62E7a8dBb8D8538e1cDb5D893030Bb16eA00B2F2`
+  - Reward Token: `0x0a779316d2D99C1B3546C57542Bc4b0321ba0140`
+
+- **MockERC20 Token**: `0x0a779316d2D99C1B3546C57542Bc4b0321ba0140`
+  - [View on Basescan](https://basescan.org/address/0x0a779316d2D99C1B3546C57542Bc4b0321ba0140)
+  - Token Name: Mock Reward Token (MRT)
+  - Initial Supply: 1,000,000 MRT
+  - Trivia Contract Balance: 100,000 MRT (for rewards)
+
+### Deployment Details
+
+- **Network**: Base Mainnet
+- **Deployment Transaction (MockERC20)**: `0x1fa1c6aa5d60ba306cd54b50cec576dfd4896fb50ce6c9ec5ea9d9e035a6f7db`
+- **Deployment Transaction (Trivia)**: `0xf18dae9a3ed7501323cf07c95bca96510b990e8dbb3790ddaf4b51d0b6007386`
+- **Gas Used (MockERC20)**: 558,189
+- **Gas Used (Trivia)**: 656,485
+
+## Documentation
+
 Visit our [docs](https://docs.scaffoldeth.io) to learn all the technical details and guides of Scaffold-ETH 2.
 
 To know more about its features, check out our [website](https://scaffoldeth.io).
