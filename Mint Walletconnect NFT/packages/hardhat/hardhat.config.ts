@@ -109,6 +109,7 @@ const config: HardhatUserConfig = {
     baseSepolia: {
       url: "https://sepolia.base.org",
       accounts: [deployerPrivateKey],
+      chainId: 84532,
     },
     scrollSepolia: {
       url: "https://sepolia-rpc.scroll.io",
@@ -148,7 +149,12 @@ const config: HardhatUserConfig = {
   // Configuration for etherscan-verify from hardhat-deploy plugin
   verify: {
     etherscan: {
-      apiKey: `${etherscanApiKey}`,
+      apiKey: {
+        mainnet: `${etherscanApiKey}`,
+        sepolia: `${etherscanApiKey}`,
+        base: `${etherscanApiKey}`,
+        baseSepolia: `${etherscanApiKey}`,
+      },
     },
   },
   sourcify: {
