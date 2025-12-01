@@ -157,8 +157,8 @@ contract WalletConnectNFT is ERC721URIStorage, ERC721Enumerable, Ownable, Reentr
         private 
         returns (uint256) 
     {
-        _tokenIds.increment();
-        uint256 newTokenId = _tokenIds.current();
+        _tokenIds++;
+        uint256 newTokenId = _tokenIds;
 
         _safeMint(_to, newTokenId);
         _setTokenURI(newTokenId, _tokenURI);
@@ -176,7 +176,7 @@ contract WalletConnectNFT is ERC721URIStorage, ERC721Enumerable, Ownable, Reentr
      * @dev Get total minted supply
      */
     function totalSupply() public view override(ERC721Enumerable) returns (uint256) {
-        return _tokenIds.current();
+        return _tokenIds;
     }
 
     /**
